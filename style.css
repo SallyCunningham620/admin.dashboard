@@ -5,7 +5,7 @@
   Josh's Custom CSS Reset
   https://www.joshwcomeau.com/css/custom-css-reset/
 */
-/*
+
 *, *::before, *::after {
     box-sizing: border-box;
   }
@@ -42,7 +42,7 @@
   #root, #__next {
     isolation: isolate;
   }
-*/
+
 /*styles*/
 
 .container {
@@ -56,20 +56,46 @@
 
 .nav {
     grid-area: nav;
+    color: white;
+    text-align: center;
+    background-color: rgb(60, 191, 252);
 }
 
+.nav .top {
+    display: flex;
+}
 .header {
     grid-area: header;
+    display: grid;
+    grid-template: 1fr 1fr / 2fr 1fr;
+    grid-template-areas:
+    "top-left top-right"
+    "bottom-left bottom-right";
 }
 
+.top-left {
+    grid-area: top-left;
+}
+.top-right {
+    grid-area: top-right;
+}
+.bottom-left {
+    grid-area: bottom-left;
+}
+.bottom-right {
+    grid-area: bottom-right;
+}
 .content {
     grid-area: content;
+    background-color: rgb(222, 226, 230);
 }
 
 .announcements {
     grid-area: announcements;
+    background-color: rgb(222, 226, 230);
 }
 
 .trending {
     grid-area: trending;
+    background-color: rgb(222, 226, 230);
 }
