@@ -37,7 +37,6 @@ html body{
 
 .container {
     height: 750px;
-    border: solid black 2px;
     display: grid;
     grid-template: 130px repeat(2, 1fr) / repeat(4, 1fr);
     grid-template-areas:
