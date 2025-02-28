@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'LouisGeorgeCafe';
+  src: url(./fonts/Louis\ George\ Cafe.ttf);
+}
+@font-face {
+  font-family: 'LouisGeorgeCafeBold';
+  src: url(./fonts/Louis\ George\ Cafe\ Bold.ttf);
+}
+
 /*styles*/
 
 
@@ -48,6 +57,7 @@ nav {
     background-color: rgb(0,153,230);
     height: 100%;
     width: clamp(200px, 100%, 300px);
+    font-family: LouisGeorgeCafeBold, sans-serif;
 }
 
 nav ul {
@@ -85,6 +95,7 @@ nav .top li a{
     grid-template-areas:
     "top-left top-right"
     "bottom-left bottom-right";
+    font-family: LouisGeorgeCafeBold, sans-serif;
 }
 
 .top-left {
@@ -110,6 +121,7 @@ nav .top li a{
 
 .top-right h4 {
   margin: 0.5em 0;
+
 }
 
 .bottom-left {
@@ -123,6 +135,7 @@ nav .top li a{
 .bottom-left div h5 {
   font-size: 0.7rem;
   margin: 0.1em;
+  font-family: LouisGeorgeCafe, sans-serif;
 }
 .bottom-left div h1 {
   font-size: 1rem;
@@ -152,6 +165,7 @@ nav .top li a{
 .announcements h3,
 .trending h3 {
   margin: 0.5em;
+  font-family: LouisGeorgeCafeBold, sans-serif;
 }
 .cards {
     display: grid;
@@ -176,12 +190,13 @@ nav .top li a{
 .content .cards .card h3 {
   grid-area: h3;
   font-size: 1em;
-  margin: 0.5em
+  margin: 0.5em;
 }
 
 .content .cards .card p {
   grid-area: p;
   margin: 0.5em;
+  font-family: LouisGeorgeCafe, sans-serif;
 }
 
 .content .cards .card .card-img {
@@ -212,6 +227,7 @@ nav .top li a{
 .announcements p {
   margin : 0.4em;
   font-size: 0.8em;
+  font-family: LouisGeorgeCafe, sans-serif;
 }
 
 .announcements .break {
@@ -241,4 +257,8 @@ nav .top li a{
 .trending .trend-cards div h5,
 .trending .trend-cards div p {
   margin: 0.2em;
+}
+
+.trending .trend-cards div p {
+  font-family: LouisGeorgeCafe, sans-serif;
 }
