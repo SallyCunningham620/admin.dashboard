@@ -1,73 +1,87 @@
-/* max ch: 75 character per line*/
-
-
-/*
-  Josh's Custom CSS Reset
-  https://www.joshwcomeau.com/css/custom-css-reset/
-*/
-
-*, *::before, *::after {
-    box-sizing: border-box;
-  }
-  
-  * {
-    margin: 0;
-  }
-  
-  body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-  
-  img, picture, video, canvas, svg {
-    display: block;
-    max-width: 100%;
-  }
-  
-  input, button, textarea, select {
-    font: inherit;
-  }
-  
-  p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-  }
-  
-  p {
-    text-wrap: pretty;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    text-wrap: balance;
-  }
-  
-  #root, #__next {
-    isolation: isolate;
-  }
-
 /*styles*/
 
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+ 
+}
+
+html body{
+  font-size: 1rem;
+  padding: 0px;
+  margin: 0px;
+}
+
+.profile-pic {
+  height: 40px;
+  width: auto;
+  border-radius: 10px;
+}
+
+.main-profile {
+  height: 3em;
+}
+
 .container {
+    height: 750px;
+    border: solid black 2px;
     display: grid;
-    grid-template: 1fr 2fr 2fr / repeat(4, 1fr);
+    grid-template: 130px repeat(2, 1fr) / repeat(4, 1fr);
     grid-template-areas:
         "nav header header header"
         "nav content content announcements"
         "nav content content trending";
 }
 
-.nav {
-    grid-area: nav;
-    color: white;
-    text-align: center;
-    background-color: rgb(60, 191, 252);
+.small-icon {
+  width: 30px;
+  height: 30px;
+  padding: 2px;
 }
 
-.nav .top {
-    display: flex;
+nav {
+    grid-area: nav;
+    background-color: rgb(0,153,230);
+    height: 100%;
+    width: clamp(200px, 100%, 300px);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-flow: column;
+}
+
+nav ul li {
+  width: 100%;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  display: flex;
+  font-size: 1rem;
+  width: 100%;
+}
+
+nav ul li a img {
+  margin-right: 20px;
+}
+
+nav .top li a{
+  font-size: 1.5rem;
 }
 .header {
     grid-area: header;
+    padding-left: 20px;
+    padding-top: 20px;
+    height: 100%;
     display: grid;
-    grid-template: 1fr 1fr / 2fr 1fr;
+    grid-template: 50px 60px / 2fr 1fr;
     grid-template-areas:
     "top-left top-right"
     "bottom-left bottom-right";
@@ -75,27 +89,156 @@
 
 .top-left {
     grid-area: top-left;
+    display: flex;
+    height: 50px;
+    align-items: center;
+}
+
+.search {
+  background-color: rgba(167, 163, 163, 0.925);
+  border-radius: 10px;
+  border: none;
+  width: 400px;
+  height: 20px;
 }
 .top-right {
     grid-area: top-right;
+    display: grid;
+    grid-template-columns: 40px 40px 150px;
+    grid-template-rows: 25px;
 }
+
+.top-right h4 {
+  margin: 0.5em 0;
+}
+
 .bottom-left {
     grid-area: bottom-left;
+    display: grid;
+    grid-template-columns: 40px 450px;
+    grid-template-rows: 15px 30px;
+    align-items: start;
+}
+
+.bottom-left div h5 {
+  font-size: 0.7rem;
+  margin: 0.1em;
+}
+.bottom-left div h1 {
+  font-size: 1rem;
+  margin: 0.5em 0.1em;
+  align-self: center;
 }
 .bottom-right {
     grid-area: bottom-right;
+    place-content: center;
+}
+
+.bottom-right button {
+  background-color: rgb(0,153,230);
+  color: white;
+  border-radius: 10px;
+  border: none;
+  padding: 5px 15px;
+  margin: 8px;
 }
 .content {
     grid-area: content;
     background-color: rgb(222, 226, 230);
+    padding-left: 20px;
+}
+
+.content h3,
+.announcements h3,
+.trending h3 {
+  margin: 0.5em;
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr) ;
+    gap: 20px;
+}
+.card {
+    border-left: solid rgba(255, 234, 116, 0.89) 7px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 0.5rem;
+    font-size: 12px;
+    display: grid;
+    grid-template: repeat(3, 1fr);
+    grid-template-areas: 
+    "h3 h3 ."
+    "p p p"
+    ". img img";
+}
+
+.content .cards .card h3 {
+  grid-area: h3;
+  font-size: 1em;
+  margin: 0.5em
+}
+
+.content .cards .card p {
+  grid-area: p;
+  margin: 0.5em;
+}
+
+.content .cards .card .card-img {
+  grid-area: img;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .announcements {
     grid-area: announcements;
     background-color: rgb(222, 226, 230);
+    padding: 10px;
 }
 
+.announcements .announce-cards {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.announcements h3 {
+  margin: 0.4em;
+  font-size: 1em;
+}
+
+.announcements p {
+  margin : 0.4em;
+  font-size: 0.8em;
+}
+
+.announcements .break {
+  border: solid grey 1px;
+  margin: 0.5em;
+}
 .trending {
     grid-area: trending;
     background-color: rgb(222, 226, 230);
+    padding: 10px;
+}
+
+.trending .trend-cards {
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px
+}
+
+.trending .trend-cards .t-card {
+    display: grid;
+    grid-template-columns: 40px 200px;
+    grid-template-rows: 20px 30px;
+}
+
+.trending .trend-cards div h5,
+.trending .trend-cards div p {
+  margin: 0.2em;
 }
